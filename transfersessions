@@ -1,0 +1,4 @@
+#!/bin/bash
+# transfer session data from pi5 to ./sessions/
+
+scp $pi5:/home/pi/trains/src/sessions/* sessions

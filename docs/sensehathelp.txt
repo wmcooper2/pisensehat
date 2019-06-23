@@ -1,0 +1,179 @@
+Help on class SenseHat in module sense_hat.sense_hat:
+
+class SenseHat(builtins.object)
+ |  Methods defined here:
+ |  
+ |  __init__(self, imu_settings_file='RTIMULib', text_assets='sense_hat_text')
+ |      Initialize self.  See help(type(self)) for accurate signature.
+ |  
+ |  clear(self, *args)
+ |      Clears the LED matrix with a single colour, default is black / off
+ |      
+ |      e.g. ap.clear()
+ |      or
+ |      ap.clear(r, g, b)
+ |      or
+ |      colour = (r, g, b)
+ |      ap.clear(colour)
+ |  
+ |  flip_h(self, redraw=True)
+ |      Flip LED matrix horizontal
+ |  
+ |  flip_v(self, redraw=True)
+ |      Flip LED matrix vertical
+ |  
+ |  gamma_reset(self)
+ |      Resets the LED matrix gamma correction to default
+ |  
+ |  get_accelerometer(self)
+ |      Gets the orientation in degrees from the accelerometer only
+ |  
+ |  get_accelerometer_raw(self)
+ |      Accelerometer x y z raw data in Gs
+ |  
+ |  get_compass(self)
+ |      Gets the direction of North from the magnetometer in degrees
+ |  
+ |  get_compass_raw(self)
+ |      Magnetometer x y z raw data in uT (micro teslas)
+ |  
+ |  get_gyroscope(self)
+ |      Gets the orientation in degrees from the gyroscope only
+ |  
+ |  get_gyroscope_raw(self)
+ |      Gyroscope x y z raw data in radians per second
+ |  
+ |  get_humidity(self)
+ |      Returns the percentage of relative humidity
+ |  
+ |  get_orientation(self)
+ |  
+ |  get_orientation_degrees(self)
+ |      Returns a dictionary object to represent the current orientation
+ |      in degrees, 0 to 360, using the aircraft principal axes of
+ |      pitch, roll and yaw
+ |  
+ |  get_orientation_radians(self)
+ |      Returns a dictionary object to represent the current orientation in
+ |      radians using the aircraft principal axes of pitch, roll and yaw
+ |  
+ |  get_pixel(self, x, y)
+ |      Returns a list of [R,G,B] representing the pixel specified by x and y
+ |      on the LED matrix. Top left = 0,0 Bottom right = 7,7
+ |  
+ |  get_pixels(self)
+ |      Returns a list containing 64 smaller lists of [R,G,B] pixels
+ |      representing what is currently displayed on the LED matrix
+ |  
+ |  get_pressure(self)
+ |      Returns the pressure in Millibars
+ |  
+ |  get_temperature(self)
+ |      Returns the temperature in Celsius
+ |  
+ |  get_temperature_from_humidity(self)
+ |      Returns the temperature in Celsius from the humidity sensor
+ |  
+ |  get_temperature_from_pressure(self)
+ |      Returns the temperature in Celsius from the pressure sensor
+ |  
+ |  load_image(self, file_path, redraw=True)
+ |      Accepts a path to an 8 x 8 image file and updates the LED matrix with
+ |      the image
+ |  
+ |  set_imu_config(self, compass_enabled, gyro_enabled, accel_enabled)
+ |      Enables and disables the gyroscope, accelerometer and/or magnetometer
+ |      input to the orientation functions
+ |  
+ |  set_pixel(self, x, y, *args)
+ |      Updates the single [R,G,B] pixel specified by x and y on the LED matrix
+ |      Top left = 0,0 Bottom right = 7,7
+ |      
+ |      e.g. ap.set_pixel(x, y, r, g, b)
+ |      or
+ |      pixel = (r, g, b)
+ |      ap.set_pixel(x, y, pixel)
+ |  
+ |  set_pixels(self, pixel_list)
+ |      Accepts a list containing 64 smaller lists of [R,G,B] pixels and
+ |      updates the LED matrix. R,G,B elements must intergers between 0
+ |      and 255
+ |  
+ |  set_rotation(self, r=0, redraw=True)
+ |      Sets the LED matrix rotation for viewing, adjust if the Pi is upside
+ |      down or sideways. 0 is with the Pi HDMI port facing downwards
+ |  
+ |  show_letter(self, s, text_colour=[255, 255, 255], back_colour=[0, 0, 0])
+ |      Displays a single text character on the LED matrix using the specified
+ |      colours
+ |  
+
+ |  show_message(self, text_string, scroll_speed=0.1, text_colour=[255, 255, 255], back_colour=[0, 0, 0])
+ |      Scrolls a string of text across the LED matrix using the specified
+ |      speed and colours
+ |  
+ |  ----------------------------------------------------------------------
+ |  Data descriptors defined here:
+ |  
+ |  __dict__
+ |      dictionary for instance variables (if defined)
+ |  
+ |  __weakref__
+ |      list of weak references to the object (if defined)
+ |  
+ |  accel
+ |  
+ |  accel_raw
+ |  
+ |  accelerometer
+ |  
+ |  accelerometer_raw
+ |  
+ |  compass
+ |  
+ |  compass_raw
+ |  
+ |  gamma
+ |  
+ |  gyro
+ |  
+ |  gyroscope
+ |  
+ |  gyroscope_raw
+ |  
+ |  humidity
+ |  
+ |  low_light
+ |  
+ |  orientation
+ |  
+ |  orientation_radians
+ |  
+ |  pressure
+ |  
+ |  rotation
+ |  
+ |  stick
+ |  
+ |  temp
+ |  
+ |  temperature
+ |  
+ |  ----------------------------------------------------------------------
+ |  Data and other attributes defined here:
+ |  
+ |  SENSE_HAT_FB_FBIOGET_GAMMA = 61696
+ |  
+ |  SENSE_HAT_FB_FBIORESET_GAMMA = 61698
+ |  
+ |  SENSE_HAT_FB_FBIOSET_GAMMA = 61697
+ |  
+ |  SENSE_HAT_FB_GAMMA_DEFAULT = 0
+ |  
+ |  SENSE_HAT_FB_GAMMA_LOW = 1
+ |  
+ |  SENSE_HAT_FB_GAMMA_USER = 2
+ |  
+ |  SENSE_HAT_FB_NAME = 'RPi-Sense FB'
+ |  
+ |  SETTINGS_HOME_PATH = '.config/sense_hat'
